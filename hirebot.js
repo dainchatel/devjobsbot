@@ -7,14 +7,11 @@ var T = new Twit({
   consumer_secret:      process.env.CONSUMER_SECRET,
   access_token:         process.env.ACCESS_TOKEN,
   access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+  timeout_ms:           60*1000
 })
 
-// T.get('friends/list', { screen_name: 'dmchatel', count: limit }, function(err, data, response) {
-//   for (let i = 0; i < limit; i++) {
-//     console.log(data.users[i].name);
-//   }
-// });
+// replace the query string with a function (permute) that returns a string
+// this basically means every tweet will have one word from each tier below
 
 let keywords = ['hire', 'hiring', 'opening'];
 let jobs = ['developer', 'software engineer'];
